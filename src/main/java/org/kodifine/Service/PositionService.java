@@ -23,5 +23,10 @@ public class PositionService {
 	{
 		return posiRepo.findAll();
 	}
+	public String delete(int id)
+	{
+		posiRepo.deleteById(id);
+		return "customer deleted successfully";
+	}
 
 }

@@ -129,7 +129,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="index.html" class="menu-link">
+              <a href="/senior/home" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -140,14 +140,14 @@
             <!-- -->
             <!-- Tables -->
             <li class="menu-item active">
-              <a href="/viewComp" class="menu-link">
+              <a href="/senior/viewComp" class="menu-link">
                 <i class='bx bx-target-lock'></i>&nbsp;&nbsp;&nbsp;&nbsp;
                 <div data-i18n="Tables">Competency</div>
               </a>
             </li>
             <!-- Tables -->
             <li class="menu-item">
-              <a href="/viewPosi" class="menu-link">
+              <a href="/senior/viewPosi" class="menu-link">
                 <i class='bx bx-trending-up'></i>&nbsp;&nbsp;&nbsp;&nbsp;
                 <div data-i18n="Tables"> Position</div>
               </a>
@@ -291,7 +291,7 @@
                       <small class="text-muted float-end"></small>
                     </div>
                     <div class="card-body">
-                      <form action="addComp" method="post">
+                      <form action="/senior/addComp" method="post">
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="competency_name">Name</label>
                           <div class="col-sm-10">

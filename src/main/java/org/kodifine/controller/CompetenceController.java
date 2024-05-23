@@ -29,19 +29,19 @@ public class CompetenceController {
         return "AddCompetence";
     }
 	
-	@GetMapping("/comp")
+	@GetMapping("/senior/home")
 	public String home()
 	{
-		return "AddCompetence";
+		return "SeniorHome";
 	}
-	@PostMapping("/addComp")
+	@PostMapping("/senior/addComp")
 	public String saveComp(Competence c)
 	{
 		compServ.save(c);
 //		return custServ.save(c);
-		return "redirect:/viewComp";
+		return "redirect:/senior/viewComp";
 	}
-	@GetMapping("/viewComp")
+	@GetMapping("/senior/viewComp")
 	public String viewComp(Model m)
 	{
 		List<Competence> compList = compServ.listComp();
@@ -49,14 +49,21 @@ public class CompetenceController {
 		return "ViewCompetence";
 	}
 	
-	@GetMapping("/deleteComp/{id}")
+	@GetMapping("/senior/deleteComp/{id}")
 	public String deleteComp(@PathVariable("id") int id)
 	{
 		compServ.delete(id);
-		return "redirect:/viewComp";
+		return "redirect:/senior/viewComp";
 	}
 	
-	@GetMapping("/editComp/{id}")
+	@GetMapping("/senior/deletePosi/{id}")
+	public String deletePosi(@PathVariable("id") int id)
+	{
+		posiServ.delete(id);
+		return "redirect:/senior/viewPosi";
+	}
+	
+	@GetMapping("/senior/editComp/{id}")
 	public String ediCust(@PathVariable int id,Model m) {
 		
 		Competence c = compServ.retrieve(id);
@@ -64,7 +71,7 @@ public class CompetenceController {
 		return "EditCompetence";
 	}
 	
-	@GetMapping("/viewComp/drop")
+	@GetMapping("/senior/compDrop")
 	public String viewCompDrop(Model m)
 	{
 		List<Competence> compList = compServ.listComp();
@@ -72,14 +79,14 @@ public class CompetenceController {
 		return "AddPosition";
 	}
 	
-	@PostMapping("/addPosi")
+	@PostMapping("/senior/addPosi")
 	public String addPosi(Position p)
 	{
 		posiServ.save(p);
-		return "redirect:/viewPosi";
+		return "redirect:/senior/viewPosi";
 	}
 	
-	@GetMapping("/viewPosi")
+	@GetMapping("/senior/viewPosi")
 	public String viewPosi(Model m)
 	{
 		List <Position> posiList = posiServ.listPosi();
